@@ -120,6 +120,47 @@ Requires Docker Desktop to be installed and running.
 pnpm db:start
 ```
 
+## Production Docker deployment
+
+Create a production environment file from the template:
+
+```bash
+cp .env.production.example .env.production
+```
+
+Update `.env.production` with strong database credentials and real DashScope/MinerU keys. The production compose file wires the API to the `postgres` service internally, so keep provider keys in `.env.production` and let `docker-compose.prod.yml` generate `DATABASE_URL` for the container. The web image is built with `VITE_API_BASE_URL=/api` and served by Nginx.
+
+Start the production stack:
+
+```bash
+docker compose -f docker-compose.prod.yml --env-file .env.production up -d --build
+```
+
+Useful operations:
+
+```bash
+docker compose -f docker-compose.prod.yml --env-file .env.production ps
+docker compose -f docker-compose.prod.yml --env-file .env.production logs -f api
+docker compose -f docker-compose.prod.yml --env-file .env.production down
+```
+
+To validate the compose file with the example environment file:
+
+```bash
+ENV_FILE=.env.production.example docker compose -f docker-compose.prod.yml --env-file .env.production.example config
+```
+
+The production stack contains:
+- `postgres`: pgvector Postgres 16 with `db/init/*.sql` loaded on first startup
+- `api`: Nest API on container port `3000`
+- `web`: Nginx on host port `80`, serving the built React app and proxying `/api/*` to the API
+
+Persistent Docker volumes:
+- `postgres-data`: database files
+- `storage-data`: uploaded PDFs, parsed Markdown, chunks, and MinerU artifacts under `/data/rag-next/storage`
+
+Important: the current MinerU cloud parser submits `MINERU_PDF_URL_BASE + uploaded file name` to MinerU. Before production acceptance, make sure uploaded PDFs are available at that public OSS URL, or add an OSS upload step before creating the MinerU task.
+
 ### Import legacy chunk directory
 
 Default source directory points to the sibling `RAG-cy` project.
