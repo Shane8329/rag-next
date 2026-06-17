@@ -130,6 +130,16 @@ cp .env.production.example .env.production
 
 Update `.env.production` with strong database credentials and real DashScope/MinerU keys. The production compose file wires the API to the `postgres` service internally, so keep provider keys in `.env.production` and let `docker-compose.prod.yml` generate `DATABASE_URL` for the container. The web image is built with `VITE_API_BASE_URL=/api` and served by Nginx.
 
+If your server cannot reliably pull from Docker Hub, point the production images at your own registry in `.env.production`:
+
+```bash
+POSTGRES_IMAGE=registry.cn-hangzhou.aliyuncs.com/<namespace>/pgvector:pg16
+NODE_IMAGE=registry.cn-hangzhou.aliyuncs.com/<namespace>/node:22-bookworm-slim
+NGINX_IMAGE=registry.cn-hangzhou.aliyuncs.com/<namespace>/nginx:1.27-alpine
+```
+
+The production Dockerfile reads `NODE_IMAGE` and `NGINX_IMAGE` as build args, and `docker-compose.prod.yml` reads `POSTGRES_IMAGE` for the database service. Leave these defaults unchanged if Docker Hub is reachable from your deployment environment.
+
 Start the production stack:
 
 ```bash

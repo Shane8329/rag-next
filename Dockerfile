@@ -1,4 +1,7 @@
-FROM node:22-bookworm-slim AS base
+ARG NODE_IMAGE=node:22-bookworm-slim
+ARG NGINX_IMAGE=nginx:1.27-alpine
+
+FROM ${NODE_IMAGE} AS base
 WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
@@ -20,7 +23,7 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 COPY . .
 RUN pnpm build
 
-FROM node:22-bookworm-slim AS api
+FROM ${NODE_IMAGE} AS api
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PNPM_HOME=/pnpm
@@ -46,6 +49,6 @@ COPY deploy ./deploy
 EXPOSE 3000
 CMD ["node", "apps/api/dist/main.js"]
 
-FROM nginx:1.27-alpine AS web
+FROM ${NGINX_IMAGE} AS web
 COPY --from=build /app/apps/web/dist /usr/share/nginx/html
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
