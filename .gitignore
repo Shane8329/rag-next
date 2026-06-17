@@ -1,0 +1,16 @@
+﻿node_modules
+.pnpm-store
+coverage
+dist
+.vite
+.turbo
+.env
+.env.local
+storage/uploads/*
+storage/imports/*
+storage/cache/*
+!storage/uploads/.gitkeep
+!storage/imports/.gitkeep
+!storage/cache/.gitkeep
+data/postgres/*
+!data/postgres/.gitkeep

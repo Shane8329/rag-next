@@ -1,0 +1,303 @@
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +5ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:21:11 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+20:22:54 [tsx] change in ./src\main.ts Restarting...
+c[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2488  - [39m2026/06/16 20:22:56 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+20:24:46 [tsx] change in ./src\modules\qa\qa.service.ts Restarting...
+c[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26480  - [39m2026/06/16 20:24:48 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+20:25:53 [tsx] change in ./src\modules\ingestion\legacy-import.service.ts Restarting...
+c[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +14ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11536  - [39m2026/06/16 20:25:55 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+20:27:57 [tsx] change in ./src\main.ts Restarting...
+c20:28:24 [tsx] change in ./src\main.ts Rerunning...
+c[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +12ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34868  - [39m2026/06/16 20:28:26 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+20:46:21 [tsx] change in ./src\modules\qa\qa.controller.ts Restarting...
+c[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 38716  - [39m2026/06/16 20:46:23 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+20:59:23 [tsx] change in ./src\modules\qa\qa.controller.ts Rerunning...
+c[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +12ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +9ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +4ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19428  - [39m2026/06/16 20:59:25 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+20:59:28 [tsx] change in ./src\modules\qa\qa.controller.ts Restarting...
+c[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +12ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 23200  - [39m2026/06/16 20:59:30 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+22:33:18 [tsx] unlink in ./src\modules\system\embedding.provider.ts Restarting...
+c22:33:57 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +12ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 11848  - [39m2026/06/16 22:33:59 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+22:34:23 [tsx] change in ./src\modules\system\database.provider.ts Restarting...
+c[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +12ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29236  - [39m2026/06/16 22:34:25 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+22:34:45 [tsx] change in ./src\modules\system\database.provider.ts Restarting...
+c[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +4ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29044  - [39m2026/06/16 22:34:46 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+22:35:04 [tsx] change in ./src\modules\app.module.ts Restarting...
+c[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22988  - [39m2026/06/16 22:35:06 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+22:35:31 [tsx] unlink in ./src\modules\qa\qa.service.ts Restarting...
+c22:35:52 [tsx] change in ./src\modules\qa\qa.service.ts Rerunning...
+c[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 30628  - [39m2026/06/16 22:35:54 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+22:36:01 [tsx] change in ./src\main.ts Restarting...
+c[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3148  - [39m2026/06/16 22:36:02 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+22:48:07 [tsx] change in ./src\modules\system\env.ts Restarting...
+c[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29096  - [39m2026/06/16 22:48:10 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+23:08:19 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 19180  - [39m2026/06/16 23:08:21 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+23:15:15 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 32616  - [39m2026/06/16 23:15:17 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+00:00:39 [tsx] change in ./src\modules\ingestion\document.repository.ts Rerunning...
+c[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34872  - [39m2026/06/17 00:00:41 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+00:02:34 [tsx] unlink in ./src\modules\ingestion\document.repository.ts Restarting...
+c00:06:22 [tsx] change in ./src\modules\ingestion\document.repository.ts Rerunning...
+c[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +6ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17756  - [39m2026/06/17 00:06:24 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+00:06:53 [tsx] change in ./src\modules\ingestion\document.repository.ts Restarting...
+c[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 34340  - [39m2026/06/17 00:06:55 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+00:09:28 [tsx] change in ./src\modules\ingestion\document.repository.ts Rerunning...
+c[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 2888  - [39m2026/06/17 00:09:30 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+08:12:45 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +5ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 31788  - [39m2026/06/17 08:12:47 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+08:15:51 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c08:16:30 [tsx] change in ./src\modules\system\embedding.provider.ts Rerunning...
+c[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentsController {/documents}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/documents, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mJobsController {/jobs}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/jobs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mQaController {/qa}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/qa/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLegacyImportController {/ingestion}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ingestion/legacy-chunk/batch, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8284  - [39m2026/06/17 08:16:31 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m

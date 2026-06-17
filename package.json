@@ -1,0 +1,32 @@
+{
+  "name": "rag-next",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.5.3",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter @rag-next/shared-types build && pnpm --filter @rag-next/api build && pnpm --filter @rag-next/worker build && pnpm --filter @rag-next/web build",
+    "dev": "pnpm --parallel --filter @rag-next/api --filter @rag-next/web --filter @rag-next/worker dev",
+    "lint": "pnpm --filter @rag-next/shared-types lint && pnpm --filter @rag-next/api lint && pnpm --filter @rag-next/worker lint && pnpm --filter @rag-next/web lint",
+    "migrate:legacy": "tsx scripts/migrate-legacy-chunks.ts",
+    "test": "pnpm --filter @rag-next/shared-types test && pnpm --filter @rag-next/api test && pnpm --filter @rag-next/worker test",
+    "typecheck": "pnpm --filter @rag-next/shared-types typecheck && pnpm --filter @rag-next/api typecheck && pnpm --filter @rag-next/worker typecheck && pnpm --filter @rag-next/web typecheck",
+    "db:start": "docker compose up -d postgres",
+    "db:stop": "docker compose stop postgres",
+    "db:logs": "docker compose logs -f postgres"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.16.0",
+    "eslint": "^9.31.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.61.0",
+    "vitest": "^3.2.4"
+  }
+}

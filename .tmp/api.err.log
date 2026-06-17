@@ -1,0 +1,272 @@
+$ tsx watch src/main.ts
+[31m[Nest] 26480  - [39m2026/06/16 20:22:38 [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'importLegacyChunkDocuments')[39m
+TypeError: Cannot read properties of undefined (reading 'importLegacyChunkDocuments')
+    at LegacyImportController.importLegacyChunkBatch (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\legacy-import.controller.ts:43:37)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:38:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:46:28
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-proxy.js:9:17
+[31m[Nest] 2488  - [39m2026/06/16 20:23:13 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mTypeError: Cannot read properties of undefined (reading 'importLegacyChunkDocuments')
+    at LegacyImportController.importLegacyChunkBatch (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\legacy-import.controller.ts:43:37)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:38:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:46:28
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-proxy.js:9:17[39m
+[31m[Nest] 26480  - [39m2026/06/16 20:25:20 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mTypeError: documents.map is not a function
+    at LegacyImportService.importLegacyChunkDocuments (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\legacy-import.service.ts:24:34)
+    at LegacyImportController.importLegacyChunkBatch (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\legacy-import.controller.ts:43:37)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:38:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-execution-context.js:46:28
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\router\router-proxy.js:9:17[39m
+[31m[Nest] 11536  - [39m2026/06/16 20:27:40 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mPayloadTooLargeError: request entity too large
+    at readStream (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\raw-body@2.5.3\node_modules\raw-body\index.js:163:17)
+    at getRawBody (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\raw-body@2.5.3\node_modules\raw-body\index.js:116:12)
+    at read (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\body-parser@1.20.4\node_modules\body-parser\lib\read.js:79:3)
+    at jsonParser (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\body-parser@1.20.4\node_modules\body-parser\lib\types\json.js:138:5)
+    at Layer.handle [as handle_request] (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:328:13)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:280:10)
+    at cors (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\cors@2.8.5\node_modules\cors\lib\index.js:188:7)[39m
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'express' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:314:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:855:18)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9227)
+    at resolveTsPaths (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:10757)
+    at resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11938)
+    at nextResolve (node:internal/modules/esm/hooks:748:28) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v22.22.3
+[31m[Nest] 34868  - [39m2026/06/16 20:28:38 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mPayloadTooLargeError: request entity too large
+    at readStream (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\raw-body@2.5.3\node_modules\raw-body\index.js:163:17)
+    at getRawBody (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\raw-body@2.5.3\node_modules\raw-body\index.js:116:12)
+    at read (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\body-parser@1.20.4\node_modules\body-parser\lib\read.js:79:3)
+    at jsonParser (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\body-parser@1.20.4\node_modules\body-parser\lib\types\json.js:138:5)
+    at Layer.handle [as handle_request] (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:328:13)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\express@4.22.1\node_modules\express\lib\router\index.js:280:10)
+    at cors (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\cors@2.8.5\node_modules\cors\lib\index.js:188:7)[39m
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\system\embedding.provider' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\app.module.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at async resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9221)
+    at async resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11932)
+    at async nextResolve (node:internal/modules/esm/hooks:748:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+    at async handleMessage (node:internal/modules/esm/worker:199:18) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/apps/api/src/modules/system/embedding.provider'
+}
+
+Node.js v22.22.3
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\qa\qa.service' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\app.module.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at async resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9221)
+    at async resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11932)
+    at async nextResolve (node:internal/modules/esm/hooks:748:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+    at async handleMessage (node:internal/modules/esm/worker:199:18) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/apps/api/src/modules/qa/qa.service'
+}
+
+Node.js v22.22.3
+[31m[Nest] 19180  - [39m2026/06/16 23:08:21 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 32616  - [39m2026/06/16 23:15:17 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\document.repository' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\app.module.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at async resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9221)
+    at async resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11932)
+    at async nextResolve (node:internal/modules/esm/hooks:748:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+    at async handleMessage (node:internal/modules/esm/worker:199:18) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/apps/api/src/modules/ingestion/document.repository'
+}
+
+Node.js v22.22.3
+[31m[Nest] 34340  - [39m2026/06/17 00:06:55 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 2888  - [39m2026/06/17 00:09:30 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 31788  - [39m2026/06/17 08:12:47 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\system\embedding.provider.ts:176:12: ERROR: Expected ";" but found "prepareTexts"
+    at failureErrorWithLog (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\esbuild@0.28.1\node_modules\esbuild\lib\main.js:1748:15)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\esbuild@0.28.1\node_modules\esbuild\lib\main.js:1017:50
+    at responseCallbacks.<computed> (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\esbuild@0.28.1\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\esbuild@0.28.1\node_modules\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\esbuild@0.28.1\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v22.22.3
+[31m[Nest] 8284  - [39m2026/06/17 08:16:31 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
