@@ -93,4 +93,38 @@ describe("QaService", () => {
     expect(answer.finalAnswer).toContain("未识别到公司");
     expect(chatProvider.calls).toHaveLength(0);
   });
+
+  it("uses the explicit company list even when the question text does not contain the company name", async () => {
+    const repository = new InMemoryDocumentRepository();
+    const embeddingProvider = new DeterministicEmbeddingProvider();
+    const chatProvider = new FakeChatProvider();
+
+    await repository.createLegacyImportJob(
+      {
+        document: {
+          externalId: "stock_10001",
+          companyName: "中原国际",
+          originalFileName: "中原国际.md",
+          sourceType: "legacy_chunk"
+        },
+        chunks: [
+          {
+            chunkIndex: 0,
+            pageStart: 3,
+            pageEnd: 3,
+            referenceMode: "weak",
+            text: "中原国际披露了投资评级信息。"
+          }
+        ]
+      },
+      embeddingProvider
+    );
+
+    const service = new QaService(repository, embeddingProvider, chatProvider);
+    const answer = await service.answer("公司投资评级", ["中原国际"]);
+
+    expect(answer.finalAnswer).toBe("model answer for 公司投资评级");
+    expect(answer.references[0]?.documentId).toBe("stock_10001");
+    expect(chatProvider.calls).toHaveLength(1);
+  });
 });

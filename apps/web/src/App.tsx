@@ -65,6 +65,9 @@ export function App() {
   const [loading, setLoading] = useState(true);
   const [importText, setImportText] = useState(sampleLegacyJson);
   const [importStatus, setImportStatus] = useState<string>("");
+  const [uploadCompanyName, setUploadCompanyName] = useState("中芯国际");
+  const [uploadFile, setUploadFile] = useState<File | null>(null);
+  const [uploadStatus, setUploadStatus] = useState<string>("");
   const [questionText, setQuestionText] = useState("请概括中芯国际本期披露的经营重点");
   const [companyNames, setCompanyNames] = useState("中芯国际");
   const [answer, setAnswer] = useState<QaAnswer | null>(null);
@@ -123,6 +126,37 @@ export function App() {
     }
   }
 
+  async function handleUploadSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (!uploadFile) {
+      setUploadStatus("请选择一个 PDF 文件。");
+      return;
+    }
+
+    setUploadStatus("正在上传并解析...");
+
+    try {
+      const formData = new FormData();
+      formData.append("file", uploadFile);
+      formData.append("companyName", uploadCompanyName);
+
+      const response = await fetch(`${baseUrl}/documents/upload`, {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`上传失败: ${response.status}`);
+      }
+
+      await refreshDashboard();
+      setUploadStatus("上传解析完成，文档和任务列表已刷新。");
+    } catch (error) {
+      setUploadStatus(error instanceof Error ? error.message : "上传失败，请稍后重试。");
+    }
+  }
+
   async function handleAskSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAskStatus("正在检索与生成答案...");
@@ -175,6 +209,35 @@ export function App() {
       </section>
 
       <section className="workspace-grid">
+        <section className="panel form-panel">
+          <h2>上传 PDF</h2>
+          <p className="muted">上传后会调用 MinerU 解析 Markdown，再切分、生成 embedding 并入库。</p>
+          <form onSubmit={handleUploadSubmit}>
+            <label className="field-label">
+              公司名
+              <input
+                className="text-input"
+                value={uploadCompanyName}
+                onChange={(event) => setUploadCompanyName(event.target.value)}
+                placeholder="例如：中芯国际"
+              />
+            </label>
+            <label className="field-label">
+              PDF 文件
+              <input
+                className="text-input"
+                accept="application/pdf,.pdf"
+                type="file"
+                onChange={(event) => setUploadFile(event.target.files?.[0] ?? null)}
+              />
+            </label>
+            <div className="form-actions">
+              <button className="primary-button" type="submit">上传并入库</button>
+              <span className="status-text">{uploadStatus}</span>
+            </div>
+          </form>
+        </section>
+
         <section className="panel form-panel">
           <div className="panel-heading">
             <h2>导入旧 Chunk JSON</h2>
@@ -245,6 +308,7 @@ export function App() {
         <h2>API 约定</h2>
         <ul>
           <li><code>GET /documents</code></li>
+          <li><code>POST /documents/upload</code></li>
           <li><code>POST /ingestion/legacy-chunk</code></li>
           <li><code>POST /ingestion/legacy-chunk/batch</code></li>
           <li><code>POST /qa/ask</code></li>

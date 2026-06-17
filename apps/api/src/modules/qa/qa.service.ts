@@ -15,8 +15,10 @@ export class QaService {
   ) {}
 
   async answer(questionText: string, companyNames: string[]): Promise<QaAnswer> {
-    const candidateCompanies = companyNames.length > 0 ? companyNames : await this.documentRepository.listCompanyNames();
-    const matchedCompanies = matchCompaniesFromQuestion(questionText, candidateCompanies);
+    const matchedCompanies =
+      companyNames.length > 0
+        ? companyNames
+        : matchCompaniesFromQuestion(questionText, await this.documentRepository.listCompanyNames());
 
     if (matchedCompanies.length === 0) {
       return {

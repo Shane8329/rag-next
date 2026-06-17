@@ -270,3 +270,246 @@ Error: listen EADDRINUSE: address already in use :::3000
 }
 
 Node.js v22.22.3
+[31m[Nest] 32212  - [39m2026/06/17 09:06:27 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'multer' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\upload.controller.ts
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:314:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:855:18)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9227)
+    at resolveTsPaths (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:10757)
+    at resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11938)
+    at nextResolve (node:internal/modules/esm/hooks:748:28) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v22.22.3
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'multer' imported from D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\upload.controller.ts
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:314:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:855:18)
+    at defaultResolve (node:internal/modules/esm/resolve:985:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:8141)
+    at resolveDirectory (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:9227)
+    at resolveTsPaths (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:10757)
+    at resolve2 (file:///D:/%E5%A4%A7%E6%A8%A1%E5%9E%8B18%E6%9C%9F/AI%E7%9F%A5%E4%B9%8E%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E4%B8%93%E5%AE%B6-18%E6%9C%9F/16-%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BC%81%E4%B8%9A%E7%9F%A5%E8%AF%86%E5%BA%93/RAG-next/node_modules/.pnpm/tsx@4.22.4/node_modules/tsx/dist/register-CqMfTiWi.mjs:2:11938)
+    at nextResolve (node:internal/modules/esm/hooks:748:28) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v22.22.3
+[31m[Nest] 32204  - [39m2026/06/17 09:08:42 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 17580  - [39m2026/06/17 09:10:51 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 14340  - [39m2026/06/17 09:11:41 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +3ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 36168  - [39m2026/06/17 09:37:59 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mError: spawn mineru ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m
+[31m[Nest] 16172  - [39m2026/06/17 09:41:50 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 32904  - [39m2026/06/17 09:51:40 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mError: MinerU command not found: "mineru". Install MinerU or set MINERU_COMMAND to an absolute executable path.
+    at MineruCommandDocumentParser.parse (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-command-parser.ts:49:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async DocumentUploadService.importUploadedDocument (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\document-upload.service.ts:52:20)[39m
+[31m[Nest] 32904  - [39m2026/06/17 09:51:42 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mError: MinerU command not found: "mineru". Install MinerU or set MINERU_COMMAND to an absolute executable path.
+    at MineruCommandDocumentParser.parse (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-command-parser.ts:49:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async DocumentUploadService.importUploadedDocument (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\document-upload.service.ts:52:20)[39m
+[31m[Nest] 32904  - [39m2026/06/17 09:51:45 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mError: MinerU command not found: "mineru". Install MinerU or set MINERU_COMMAND to an absolute executable path.
+    at MineruCommandDocumentParser.parse (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-command-parser.ts:49:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async DocumentUploadService.importUploadedDocument (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\document-upload.service.ts:52:20)[39m
+[31m[Nest] 30100  - [39m2026/06/17 09:56:41 [31m  ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mMINERU_API_KEY is required[39m
+Error: MINERU_API_KEY is required
+    at requireValue (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:170:11)
+    at new MineruCloudDocumentParser (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:46:19)
+    at InstanceWrapper.useFactory (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\app.module.ts:40:25)
+    at Injector.instantiateClass (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:376:55)
+    at callback (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:65:45)
+    at async Injector.resolveConstructorParams (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:145:24)
+    at async Injector.loadInstance (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at async Injector.loadProvider (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+    at async Promise.all (index 10)
+[31m[Nest] 19128  - [39m2026/06/17 09:58:16 [31m  ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mMINERU_API_KEY is required[39m
+Error: MINERU_API_KEY is required
+    at requireValue (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:170:11)
+    at new MineruCloudDocumentParser (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:46:19)
+    at createMineruDocumentParser (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-parser.factory.ts:10:10)
+    at InstanceWrapper.useFactory (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\app.module.ts:40:25)
+    at Injector.instantiateClass (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:376:55)
+    at callback (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:65:45)
+    at async Injector.resolveConstructorParams (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:145:24)
+    at async Injector.loadInstance (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at async Injector.loadProvider (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\injector.js:98:9)
+    at async D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\injector\instance-loader.js:56:13
+[31m[Nest] 18264  - [39m2026/06/17 10:43:00 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mTypeError: Cannot convert argument to a ByteString because the character at index 7 has a value of 28003 which is greater than 255.
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OpenAiEmbeddingProvider.embedDocuments (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\system\embedding.provider.ts:176:22)
+    at async OpenAiEmbeddingProvider.embedQuery (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\system\embedding.provider.ts:204:25)
+    at async QaService.answer (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\qa\qa.service.ts:33:31)[39m
+[31m[Nest] 20692  - [39m2026/06/17 10:46:56 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 22200  - [39m2026/06/17 10:47:34 [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+platform-express@10_795a7c87fa3e5cd6ba081ef20e3755d8\node_modules\@nestjs\platform-express\adapters\express-adapter.js:95:32)
+    at D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\node_modules\.pnpm\@nestjs+core@10.4.22_@nestj_558ae3c7cf983d845eb445c3b6d17e96\node_modules\@nestjs\core\nest-application.js:173:16)
+    at async bootstrap (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\main.ts:36:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v22.22.3
+[31m[Nest] 24592  - [39m2026/06/17 11:28:45 [31m  ERROR[39m [38;5;3m[LoggingExceptionFilter] [39m[31mError: MinerU task failed: failed to read file, please check if the file is corrupted and try uploading again
+    at MineruCloudDocumentParser.waitForResult (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:117:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MineruCloudDocumentParser.parse (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\mineru-cloud-parser.ts:60:20)
+    at async DocumentUploadService.importUploadedDocument (D:\大模型18期\AI知乎大模型应用专家-18期\16-项目实战：企业知识库\RAG-next\apps\api\src\modules\ingestion\document-upload.service.ts:52:20)[39m

@@ -1,8 +1,12 @@
 import { Module } from "@nestjs/common";
 
 import { DocumentRepository } from "./ingestion/document.repository";
+import { DOCUMENT_PARSER } from "./ingestion/document-parser";
+import { DocumentUploadService } from "./ingestion/document-upload.service";
 import { LegacyImportController } from "./ingestion/legacy-import.controller";
 import { LegacyImportService } from "./ingestion/legacy-import.service";
+import { createMineruDocumentParser } from "./ingestion/mineru-parser.factory";
+import { UploadController } from "./ingestion/upload.controller";
 import { DocumentsController } from "./knowledge-base/documents.controller";
 import { QaController } from "./qa/qa.controller";
 import { QaService } from "./qa/qa.service";
@@ -13,8 +17,9 @@ import { JobsController } from "./system/jobs.controller";
 import { JobsService } from "./system/jobs.service";
 
 @Module({
-  controllers: [DocumentsController, JobsController, QaController, LegacyImportController],
+  controllers: [DocumentsController, JobsController, QaController, LegacyImportController, UploadController],
   providers: [
+    DocumentUploadService,
     LegacyImportService,
     JobsService,
     QaService,
@@ -29,6 +34,10 @@ import { JobsService } from "./system/jobs.service";
     {
       provide: CHAT_PROVIDER,
       useFactory: () => createChatProvider()
+    },
+    {
+      provide: DOCUMENT_PARSER,
+      useFactory: () => createMineruDocumentParser()
     }
   ]
 })

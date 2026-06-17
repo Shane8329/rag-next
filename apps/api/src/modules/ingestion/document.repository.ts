@@ -28,7 +28,11 @@ const DEFAULT_KEYWORD_TERMS = ["销售收入", "营业收入", "营收", "收入
 export abstract class DocumentRepository {
   abstract listDocuments(): Promise<ImportedDocumentSummary[]> | ImportedDocumentSummary[];
   abstract listIngestionJobs(): Promise<IngestionJobRecord[]> | IngestionJobRecord[];
-  abstract createLegacyImportJob(payload: ImportedLegacyChunkPayload, embeddingProvider: EmbeddingProvider): Promise<IngestionJobRecord> | IngestionJobRecord;
+  abstract createLegacyImportJob(
+    payload: ImportedLegacyChunkPayload,
+    embeddingProvider: EmbeddingProvider,
+    source?: IngestionJobRecord["source"]
+  ): Promise<IngestionJobRecord> | IngestionJobRecord;
   abstract listCompanyNames(): Promise<string[]> | string[];
   abstract searchChunksByCompany(companyName: string, questionText: string, questionEmbedding: number[], limit: number): Promise<ChunkSearchResult[]> | ChunkSearchResult[];
 }
@@ -163,7 +167,11 @@ export class InMemoryDocumentRepository implements DocumentRepository {
     );
   }
 
-  async createLegacyImportJob(payload: ImportedLegacyChunkPayload, embeddingProvider: EmbeddingProvider): Promise<IngestionJobRecord> {
+  async createLegacyImportJob(
+    payload: ImportedLegacyChunkPayload,
+    embeddingProvider: EmbeddingProvider,
+    source: IngestionJobRecord["source"] = "legacy-chunk"
+  ): Promise<IngestionJobRecord> {
     const now = new Date().toISOString();
     const documentId = randomUUID();
     const embeddings = await embeddingProvider.embedDocuments(payload.chunks.map((chunk) => chunk.text));
@@ -193,7 +201,7 @@ export class InMemoryDocumentRepository implements DocumentRepository {
     const job: IngestionJobRecord = {
       id: randomUUID(),
       status: "completed",
-      source: "legacy-chunk",
+      source,
       documentExternalId: payload.document.externalId,
       result: {
         chunkCount: payload.chunks.length,
@@ -283,7 +291,11 @@ export class PgDocumentRepository implements DocumentRepository {
     return rankChunkCandidates(result.rows, questionText, limit);
   }
 
-  async createLegacyImportJob(payload: ImportedLegacyChunkPayload, embeddingProvider: EmbeddingProvider): Promise<IngestionJobRecord> {
+  async createLegacyImportJob(
+    payload: ImportedLegacyChunkPayload,
+    embeddingProvider: EmbeddingProvider,
+    source: IngestionJobRecord["source"] = "legacy-chunk"
+  ): Promise<IngestionJobRecord> {
     const now = new Date().toISOString();
     const jobId = randomUUID();
     const documentId = randomUUID();
@@ -355,7 +367,7 @@ export class PgDocumentRepository implements DocumentRepository {
       `,
       [
         jobId,
-        "legacy-chunk-import",
+        source === "upload" ? "upload" : "legacy-chunk-import",
         "completed",
         JSON.stringify(payload),
         JSON.stringify({ chunkCount: payload.chunks.length, companyName: payload.document.companyName }),
@@ -367,7 +379,7 @@ export class PgDocumentRepository implements DocumentRepository {
     return {
       id: jobId,
       status: "completed",
-      source: "legacy-chunk",
+      source,
       documentExternalId: payload.document.externalId,
       result: {
         chunkCount: payload.chunks.length,

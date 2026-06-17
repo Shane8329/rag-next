@@ -1,8 +1,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
-export function loadDotEnv(): void {
-  const envPath = findDotEnvPath(process.cwd());
+export function loadDotEnv(startDir = process.cwd()): void {
+  const envPath = findDotEnvPath(startDir);
 
   if (!envPath) {
     return;
@@ -25,9 +25,7 @@ export function loadDotEnv(): void {
     const key = trimmed.slice(0, index).trim();
     const value = trimmed.slice(index + 1).trim();
 
-    if (!(key in process.env) || process.env[key] === undefined) {
-      process.env[key] = value;
-    }
+    process.env[key] = value;
   }
 }
 

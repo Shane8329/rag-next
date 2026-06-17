@@ -24,7 +24,7 @@ export interface ImportedDocumentRecord {
   externalId: string;
   companyName: string;
   originalFileName: string;
-  sourceType: "legacy_chunk";
+  sourceType: "legacy_chunk" | "upload";
 }
 
 export interface ImportedChunkRecord {
