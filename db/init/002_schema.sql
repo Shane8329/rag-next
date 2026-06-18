@@ -33,10 +33,15 @@ CREATE TABLE IF NOT EXISTS document_chunks (
   page_start INTEGER NOT NULL,
   page_end INTEGER NOT NULL,
   text_content TEXT NOT NULL,
+  keyword_lexemes TEXT NOT NULL DEFAULT '',
   reference_mode TEXT NOT NULL DEFAULT 'weak',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   UNIQUE(document_id, chunk_index)
 );
+
+CREATE INDEX IF NOT EXISTS idx_document_chunks_keyword_fts
+ON document_chunks
+USING GIN (to_tsvector('simple', keyword_lexemes));
 
 CREATE TABLE IF NOT EXISTS chunk_embeddings (
   chunk_id UUID PRIMARY KEY REFERENCES document_chunks(id) ON DELETE CASCADE,

@@ -4,6 +4,7 @@ import type { ImportedLegacyChunkPayload } from "@rag-next/shared-types";
 
 import type { EmbeddingProvider } from "../system/embedding.provider";
 import type { ChunkSearchResult, ImportedDocumentSummary, IngestionJobRecord } from "./ingestion.types";
+import { buildKeywordLexemeString, buildKeywordLexemes, buildKeywordTsQueryString } from "./retrieval-text";
 
 export interface QueryClientLike {
   query<T = Record<string, unknown>>(sql: string, params?: unknown[]): Promise<{ rows: T[] }>;
@@ -23,7 +24,10 @@ interface ChunkCandidate extends ChunkSearchResult {
   chunkId: string;
 }
 
-const DEFAULT_KEYWORD_TERMS = ["销售收入", "营业收入", "营收", "收入", "全年", "一季度", "第一季度", "2024", "2025"];
+interface HybridChunkCandidate extends ChunkCandidate {
+  keywordRank?: number;
+  vectorRank?: number;
+}
 
 export abstract class DocumentRepository {
   abstract listDocuments(): Promise<ImportedDocumentSummary[]> | ImportedDocumentSummary[];
@@ -45,55 +49,23 @@ export function createDocumentRepository(queryClient?: QueryClientLike): Documen
   return new PgDocumentRepository(queryClient);
 }
 
-function normalizeQuestionText(text: string): string {
-  return text.toLowerCase().replace(/\s+/g, "");
+function reciprocalRank(rank?: number): number {
+  return typeof rank === "number" ? 1 / (60 + rank) : 0;
 }
 
-function extractQuestionTerms(questionText: string): string[] {
-  const normalized = normalizeQuestionText(questionText);
-  const terms = new Set<string>();
-
-  for (const term of DEFAULT_KEYWORD_TERMS) {
-    if (normalized.includes(term)) {
-      terms.add(term);
-    }
-  }
-
-  for (const match of normalized.match(/[\u4e00-\u9fff]{2,}|[A-Za-z0-9]{2,}/g) ?? []) {
-    terms.add(match);
-  }
-
-  return [...terms];
-}
-
-function scoreChunk(text: string, questionText: string): number {
-  const normalizedText = normalizeQuestionText(text);
-  let score = 0;
-
-  for (const term of extractQuestionTerms(questionText)) {
-    if (normalizedText.includes(term)) {
-      score += term.length >= 4 ? 0.18 : 0.08;
-    }
-  }
-
-  if (normalizedText.includes("销售收入") || normalizedText.includes("营业收入") || normalizedText.includes("营收")) {
-    score += 1;
-  }
-
-  if (normalizedText.includes("2024") && normalizedText.includes("销售收入")) {
-    score += 0.1;
-  }
-
-  return score;
-}
-
-function rankChunkCandidates(candidates: ChunkCandidate[], questionText: string, limit: number): ChunkSearchResult[] {
+function rankHybridChunkCandidates(candidates: HybridChunkCandidate[], limit: number): ChunkSearchResult[] {
   return candidates
     .map((candidate) => ({
       ...candidate,
-      score: candidate.score + scoreChunk(candidate.text, questionText)
+      score: reciprocalRank(candidate.vectorRank) + reciprocalRank(candidate.keywordRank)
     }))
-    .sort((left, right) => right.score - left.score || left.pageStart - right.pageStart)
+    .sort(
+      (left, right) =>
+        right.score - left.score ||
+        (left.vectorRank ?? Number.MAX_SAFE_INTEGER) - (right.vectorRank ?? Number.MAX_SAFE_INTEGER) ||
+        (left.keywordRank ?? Number.MAX_SAFE_INTEGER) - (right.keywordRank ?? Number.MAX_SAFE_INTEGER) ||
+        left.pageStart - right.pageStart
+    )
     .slice(0, limit)
     .map((candidate) => ({
       documentId: candidate.documentId,
@@ -104,6 +76,49 @@ function rankChunkCandidates(candidates: ChunkCandidate[], questionText: string,
       text: candidate.text,
       score: candidate.score
     }));
+}
+
+function mergeHybridCandidates(vectorCandidates: HybridChunkCandidate[], keywordCandidates: HybridChunkCandidate[]): HybridChunkCandidate[] {
+  const merged = new Map<string, HybridChunkCandidate>();
+
+  for (const candidate of [...vectorCandidates, ...keywordCandidates]) {
+    const existing = merged.get(candidate.chunkId);
+
+    if (!existing) {
+      merged.set(candidate.chunkId, { ...candidate });
+      continue;
+    }
+
+    existing.vectorRank = existing.vectorRank ?? candidate.vectorRank;
+    existing.keywordRank = existing.keywordRank ?? candidate.keywordRank;
+  }
+
+  return [...merged.values()];
+}
+
+function scoreKeywordMatch(text: string, questionText: string): number {
+  const textLexemes = new Set(buildKeywordLexemes(text));
+  let score = 0;
+
+  for (const lexeme of buildKeywordLexemes(questionText)) {
+    if (textLexemes.has(lexeme)) {
+      score += 1;
+    }
+  }
+
+  return score;
+}
+
+function toSearchResult(row: ChunkCandidate): ChunkSearchResult {
+  return {
+    documentId: row.documentId,
+    externalId: row.externalId,
+    companyName: row.companyName,
+    pageStart: row.pageStart,
+    pageEnd: row.pageEnd,
+    text: row.text,
+    score: Number(row.score)
+  };
 }
 
 function cosineSimilarity(left: number[], right: number[]): number {
@@ -149,10 +164,35 @@ export class InMemoryDocumentRepository implements DocumentRepository {
   }
 
   searchChunksByCompany(companyName: string, questionText: string, questionEmbedding: number[], limit: number): ChunkSearchResult[] {
-    return rankChunkCandidates(
-      this.chunks
-        .filter((chunk) => chunk.companyName === companyName)
-        .map((chunk) => ({
+    const candidateLimit = Math.max(limit * 8, 24);
+    const chunks = this.chunks.filter((chunk) => chunk.companyName === companyName);
+    const vectorCandidates = chunks
+      .map((chunk) => ({
+        chunk,
+        score: cosineSimilarity(chunk.embedding, questionEmbedding)
+      }))
+      .sort((left, right) => right.score - left.score || left.chunk.pageStart - right.chunk.pageStart)
+      .slice(0, candidateLimit)
+      .map(({ chunk, score }, index) => ({
+        chunkId: `${chunk.documentId}:${chunk.pageStart}:${chunk.pageEnd}`,
+        documentId: chunk.documentId,
+        externalId: chunk.externalId,
+        companyName: chunk.companyName,
+        pageStart: chunk.pageStart,
+        pageEnd: chunk.pageEnd,
+        text: chunk.text,
+        score,
+        vectorRank: index + 1
+      }));
+    const keywordCandidates = chunks
+      .map((chunk) => ({
+        chunk,
+        score: scoreKeywordMatch(chunk.text, questionText)
+      }))
+      .filter((candidate) => candidate.score > 0)
+      .sort((left, right) => right.score - left.score || left.chunk.pageStart - right.chunk.pageStart)
+      .slice(0, candidateLimit)
+      .map(({ chunk, score }, index) => ({
           chunkId: `${chunk.documentId}:${chunk.pageStart}:${chunk.pageEnd}`,
           documentId: chunk.documentId,
           externalId: chunk.externalId,
@@ -160,11 +200,11 @@ export class InMemoryDocumentRepository implements DocumentRepository {
           pageStart: chunk.pageStart,
           pageEnd: chunk.pageEnd,
           text: chunk.text,
-          score: cosineSimilarity(chunk.embedding, questionEmbedding)
-        })),
-      questionText,
-      limit
-    );
+        score,
+        keywordRank: index + 1
+      }));
+
+    return rankHybridChunkCandidates(mergeHybridCandidates(vectorCandidates, keywordCandidates), limit);
   }
 
   async createLegacyImportJob(
@@ -266,29 +306,80 @@ export class PgDocumentRepository implements DocumentRepository {
   }
 
   async searchChunksByCompany(companyName: string, questionText: string, questionEmbedding: number[], limit: number): Promise<ChunkSearchResult[]> {
-    const candidateLimit = Math.max(limit * 4, 12);
+    const candidateLimit = Math.max(limit * 8, 24);
+    const keywordTsQuery = buildKeywordTsQueryString(questionText, 40);
     const result = await this.queryClient.query<ChunkCandidate>(
       `
+        with vector_candidates as (
+          select
+            dc.id as "chunkId",
+            dc.document_id as "documentId",
+            d.external_id as "externalId",
+            d.company_name as "companyName",
+            dc.page_start as "pageStart",
+            dc.page_end as "pageEnd",
+            dc.text_content as "text",
+            row_number() over (order by ce.embedding <=> $2::vector asc, dc.page_start asc) as "vectorRank"
+          from document_chunks dc
+          inner join documents d on d.id = dc.document_id
+          inner join chunk_embeddings ce on ce.chunk_id = dc.id
+          where d.company_name = $1
+          order by ce.embedding <=> $2::vector asc, dc.page_start asc
+          limit $4
+        ),
+        keyword_candidates as (
+          select
+            dc.id as "chunkId",
+            dc.document_id as "documentId",
+            d.external_id as "externalId",
+            d.company_name as "companyName",
+            dc.page_start as "pageStart",
+            dc.page_end as "pageEnd",
+            dc.text_content as "text",
+            row_number() over (
+              order by ts_rank_cd(to_tsvector('simple', dc.keyword_lexemes), to_tsquery('simple', $3)) desc, dc.page_start asc
+            ) as "keywordRank"
+          from document_chunks dc
+          inner join documents d on d.id = dc.document_id
+          where d.company_name = $1
+            and $3 <> ''
+            and to_tsvector('simple', dc.keyword_lexemes) @@ to_tsquery('simple', $3)
+          order by ts_rank_cd(to_tsvector('simple', dc.keyword_lexemes), to_tsquery('simple', $3)) desc, dc.page_start asc
+          limit $4
+        ),
+        merged as (
+          select
+            coalesce(v."chunkId", k."chunkId") as "chunkId",
+            coalesce(v."documentId", k."documentId") as "documentId",
+            coalesce(v."externalId", k."externalId") as "externalId",
+            coalesce(v."companyName", k."companyName") as "companyName",
+            coalesce(v."pageStart", k."pageStart") as "pageStart",
+            coalesce(v."pageEnd", k."pageEnd") as "pageEnd",
+            coalesce(v."text", k."text") as "text",
+            v."vectorRank",
+            k."keywordRank",
+            coalesce((1.0 / (60 + v."vectorRank"))::double precision, 0)
+              + coalesce((1.0 / (60 + k."keywordRank"))::double precision, 0) as "score"
+          from vector_candidates v
+          full outer join keyword_candidates k on k."chunkId" = v."chunkId"
+        )
         select
-          dc.id as "chunkId",
-          dc.document_id as "documentId",
-          d.external_id as "externalId",
-          d.company_name as "companyName",
-          dc.page_start as "pageStart",
-          dc.page_end as "pageEnd",
-          dc.text_content as "text",
-          1 - (ce.embedding <=> $2::vector) as "score"
-        from document_chunks dc
-        inner join documents d on d.id = dc.document_id
-        inner join chunk_embeddings ce on ce.chunk_id = dc.id
-        where d.company_name = $1
-        order by ce.embedding <=> $2::vector asc, dc.page_start asc
-        limit $3
+          "chunkId",
+          "documentId",
+          "externalId",
+          "companyName",
+          "pageStart",
+          "pageEnd",
+          "text",
+          "score"
+        from merged
+        order by "score" desc, "vectorRank" asc nulls last, "keywordRank" asc nulls last, "pageStart" asc
+        limit $5
       `,
-      [companyName, toPgvectorLiteral(questionEmbedding), candidateLimit]
+      [companyName, toPgvectorLiteral(questionEmbedding), keywordTsQuery, candidateLimit, limit]
     );
 
-    return rankChunkCandidates(result.rows, questionText, limit);
+    return result.rows.map(toSearchResult);
   }
 
   async createLegacyImportJob(
@@ -329,19 +420,21 @@ export class PgDocumentRepository implements DocumentRepository {
 
     for (const [index, chunk] of payload.chunks.entries()) {
       const chunkId = randomUUID();
+      const keywordLexemes = buildKeywordLexemeString(chunk.text);
       const chunkResult = await this.queryClient.query<{ id: string }>(
         `
           insert into document_chunks (
-            id, document_id, chunk_index, page_start, page_end, text_content, reference_mode, created_at
-          ) values ($1, $2, $3, $4, $5, $6, $7, $8)
+            id, document_id, chunk_index, page_start, page_end, text_content, keyword_lexemes, reference_mode, created_at
+          ) values ($1, $2, $3, $4, $5, $6, $7, $8, $9)
           on conflict (document_id, chunk_index) do update set
             page_start = excluded.page_start,
             page_end = excluded.page_end,
             text_content = excluded.text_content,
+            keyword_lexemes = excluded.keyword_lexemes,
             reference_mode = excluded.reference_mode
           returning id
         `,
-        [chunkId, persistedDocumentId, chunk.chunkIndex, chunk.pageStart, chunk.pageEnd, chunk.text, chunk.referenceMode, now]
+        [chunkId, persistedDocumentId, chunk.chunkIndex, chunk.pageStart, chunk.pageEnd, chunk.text, keywordLexemes, chunk.referenceMode, now]
       );
       const persistedChunkId = chunkResult.rows[0]?.id ?? chunkId;
 

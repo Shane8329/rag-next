@@ -84,6 +84,46 @@ describe("QaService", () => {
     expect(answer.relevantPages[0]).toBe(18);
   });
 
+  it("uses fused retrieval ordering when preparing references", async () => {
+    const repository = new InMemoryDocumentRepository();
+    const embeddingProvider = new DeterministicEmbeddingProvider();
+    const chatProvider = new FakeChatProvider();
+
+    await repository.createLegacyImportJob({
+      document: {
+        externalId: "stock_10001",
+        companyName: "中芯国际",
+        originalFileName: "smic.md",
+        sourceType: "legacy_chunk"
+      },
+      chunks: [
+        {
+          chunkIndex: 0,
+          pageStart: 8,
+          pageEnd: 8,
+          referenceMode: "weak",
+          text: "成熟制程产能保持稳定。"
+        },
+        {
+          chunkIndex: 1,
+          pageStart: 18,
+          pageEnd: 18,
+          referenceMode: "weak",
+          text: "2024年销售收入同比增长。"
+        }
+      ]
+    }, embeddingProvider);
+
+    const service = new QaService(repository, embeddingProvider, chatProvider);
+    const answer = await service.answer("中芯国际2024年销售收入", []);
+
+    expect(answer.finalAnswer).toBe("model answer for 中芯国际2024年销售收入");
+    expect(answer.relevantPages).toContain(18);
+    expect(answer.references[0]?.documentId).toBe("stock_10001");
+    expect(answer.references[0]?.page).toBe(18);
+    expect(chatProvider.calls).toHaveLength(1);
+  });
+
   it("returns a no-company message without calling the chat provider when nothing matches", async () => {
     const chatProvider = new FakeChatProvider();
     const service = new QaService(new InMemoryDocumentRepository(), new DeterministicEmbeddingProvider(), chatProvider);
