@@ -13,6 +13,7 @@ const BATCH_SIZE = 200;
 loadDotEnv();
 
 async function ensureHybridRetrievalSchema(pool: Pool): Promise<void> {
+  // db/init 只在全新数据库初始化时执行；已有数据库需要这类幂等迁移补齐新列和索引。
   await pool.query(`
     alter table document_chunks
     add column if not exists keyword_lexemes text not null default ''
@@ -29,6 +30,7 @@ async function backfillKeywordLexemes(pool: Pool): Promise<number> {
   let updated = 0;
 
   while (true) {
+    // 分批回填，避免历史 chunk 很多时一次性把数据库连接占用太久。
     const result = await pool.query<ChunkRow>(
       `
         select

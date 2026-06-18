@@ -5,6 +5,7 @@ import { randomUUID } from "node:crypto";
 import { DocumentRepository } from "../ingestion/document.repository";
 import { CHAT_PROVIDER, type ChatProvider } from "../system/chat.provider";
 import { EMBEDDING_PROVIDER, type EmbeddingProvider } from "../system/embedding.provider";
+import { LangChainQaPipeline } from "./langchain-qa.pipeline";
 
 @Injectable()
 export class QaService {
@@ -30,13 +31,13 @@ export class QaService {
       };
     }
 
-    const questionEmbedding = await this.embeddingProvider.embedQuery(questionText);
-    const contexts = await Promise.all(
-      matchedCompanies.map(async (companyName) => ({
-        companyName,
-        chunks: await this.documentRepository.searchChunksByCompany(companyName, questionText, questionEmbedding, 3)
-      }))
-    );
+    // QaService 保留“对外 API 语义”：识别公司、整理引用页、返回 QaAnswer。
+    // 真正的 RAG 编排交给 LangChainQaPipeline，便于后续接 LangSmith trace、问题改写或多路 retriever。
+    const pipeline = new LangChainQaPipeline(this.documentRepository, this.embeddingProvider, this.chatProvider);
+    const { contexts, finalAnswer } = await pipeline.invoke({
+      companyNames: matchedCompanies,
+      questionText
+    });
 
     const flatChunks = contexts.flatMap((context) => context.chunks);
     const relevantPages = validateRelevantPages(
@@ -45,11 +46,6 @@ export class QaService {
       Math.min(2, Math.max(flatChunks.length, 1)),
       8
     );
-
-    const finalAnswer = await this.chatProvider.answerQuestion({
-      contexts,
-      questionText
-    });
 
     return {
       traceId: randomUUID(),

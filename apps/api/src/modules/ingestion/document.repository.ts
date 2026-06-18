@@ -57,6 +57,8 @@ function rankHybridChunkCandidates(candidates: HybridChunkCandidate[], limit: nu
   return candidates
     .map((candidate) => ({
       ...candidate,
+      // RRF 只看两个通道各自的名次，不直接混合向量距离和关键词分数，
+      // 这样可以避免不同分数尺度互相污染，排序也更容易解释。
       score: reciprocalRank(candidate.vectorRank) + reciprocalRank(candidate.keywordRank)
     }))
     .sort(
@@ -81,6 +83,8 @@ function rankHybridChunkCandidates(candidates: HybridChunkCandidate[], limit: nu
 function mergeHybridCandidates(vectorCandidates: HybridChunkCandidate[], keywordCandidates: HybridChunkCandidate[]): HybridChunkCandidate[] {
   const merged = new Map<string, HybridChunkCandidate>();
 
+  // 向量通道和关键词通道可能命中同一个 chunk，这里按 chunkId 合并，
+  // 保留各自 rank，最后统一交给 RRF 排序。
   for (const candidate of [...vectorCandidates, ...keywordCandidates]) {
     const existing = merged.get(candidate.chunkId);
 
@@ -166,6 +170,7 @@ export class InMemoryDocumentRepository implements DocumentRepository {
   searchChunksByCompany(companyName: string, questionText: string, questionEmbedding: number[], limit: number): ChunkSearchResult[] {
     const candidateLimit = Math.max(limit * 8, 24);
     const chunks = this.chunks.filter((chunk) => chunk.companyName === companyName);
+    // 内存仓用于本地测试和无数据库模式，也要保留与 Postgres 近似的“双通道召回 + 融合排序”语义。
     const vectorCandidates = chunks
       .map((chunk) => ({
         chunk,
@@ -310,6 +315,8 @@ export class PgDocumentRepository implements DocumentRepository {
     const keywordTsQuery = buildKeywordTsQueryString(questionText, 40);
     const result = await this.queryClient.query<ChunkCandidate>(
       `
+        -- 向量候选负责语义召回；关键词候选负责数字、术语、字段名等精确命中；
+        -- merged 阶段用 RRF 在 Postgres 内完成融合重排，返回给上层的 score 即融合分数。
         with vector_candidates as (
           select
             dc.id as "chunkId",
@@ -420,6 +427,8 @@ export class PgDocumentRepository implements DocumentRepository {
 
     for (const [index, chunk] of payload.chunks.entries()) {
       const chunkId = randomUUID();
+      // keyword_lexemes 是中文轻量关键词召回的倒排索引输入，
+      // 导入时写入可以避免问答时临时扫描和分词。
       const keywordLexemes = buildKeywordLexemeString(chunk.text);
       const chunkResult = await this.queryClient.query<{ id: string }>(
         `
